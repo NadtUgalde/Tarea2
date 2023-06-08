@@ -24,12 +24,13 @@ namespace Tarea2
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("+***************Menu***************+");
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("|\tA-Ingresar notas          |");
-                Console.WriteLine("|\tB-Consultar notas         |");
-                Console.WriteLine("|\tC-Modificar notas         |");
-                Console.WriteLine("|\tD-Eliminar registro       |");
-                Console.WriteLine("|\tE-Reporte                 |");
-                Console.WriteLine("|\tF-Salir                   |");
+                Console.WriteLine("|\tA-Iniciar arreglos        |");
+                Console.WriteLine("|\tB-Ingresar notas          |");
+                Console.WriteLine("|\tC-Consultar notas         |");
+                Console.WriteLine("|\tD-Modificar notas         |");
+                Console.WriteLine("|\tE-Eliminar registro       |");
+                Console.WriteLine("|\tF-Reporte                 |");
+                Console.WriteLine("|\tG-Salir                   |");
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("+**********************************+");
                 Console.ForegroundColor= ConsoleColor.White;
@@ -37,17 +38,28 @@ namespace Tarea2
                  op = Console.ReadLine().ToUpper();
                 switch (op)
                 {
-                    case "A": Ingresarnotas(); break;
-                    case "B": Consulta(); break;
-                    case "C": Modificar(); break;
-                    case "D": Eliminar(); break;
-                    case "E": Reporte(); break;
-                    case "F": break;
+                    case "A": iniciarArreglos(); break;
+                    case "B": Ingresarnotas(); break;
+                    case "C": Consulta(); break;
+                    case "D": Modificar(); break;
+                    case "E": Eliminar(); break;
+                    case "F": Reporte(); break;
+                    case "G": break;
                     default:
                         Console.WriteLine("Opcion invalida, intente de nuevo.");
                         break;
                 }
-            } while (!op.Equals("E"));
+            } while (!op.Equals("G"));
+        }
+
+        public static void iniciarArreglos()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                estudiantes[i] = "";
+                notas[i] = 0;
+            }
+            
         }
 
         public static void Ingresarnotas()
